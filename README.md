@@ -1,5 +1,7 @@
 # Terragrunt GitHub Actions
 
+Originally forked from [the-commons-project/terragrunt-github-actions](<https://github.com/the-commons-project/terragrunt-github-actions>)
+
 Terragrunt GitHub Actions allow you to execute Terragrunt commands within GitHub Actions.
 
 The output of the actions can be viewed from the Actions tab in the main repository view. If the actions are executed on a pull request event, a comment may be posted on the pull request.
@@ -30,7 +32,7 @@ jobs:
       - name: 'Checkout'
         uses: actions/checkout@master
       - name: 'Terragrunt Format'
-        uses: the-commons-project/terragrunt-github-actions@master
+        uses: vbridgecloud/terragrunt-github-actions@master
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
@@ -41,7 +43,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Terragrunt Init'
-        uses: the-commons-project/terragrunt-github-actions@master
+        uses: vbridgecloud/terragrunt-github-actions@master
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
@@ -51,7 +53,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Terragrunt Validate'
-        uses: the-commons-project/terragrunt-github-actions@master
+        uses: vbridgecloud/terragrunt-github-actions@master
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
@@ -62,7 +64,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Terragrunt Plan'
-        uses: the-commons-project/terragrunt-github-actions@master
+        uses: vbridgecloud/terragrunt-github-actions@master
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
