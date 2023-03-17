@@ -30,9 +30,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: 'Terragrunt Format'
-        uses: vbridgecloud/terragrunt-github-actions@master
+        uses: vbridgecloud/terragrunt-github-actions@main
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
@@ -43,7 +43,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Terragrunt Init'
-        uses: vbridgecloud/terragrunt-github-actions@master
+        uses: vbridgecloud/terragrunt-github-actions@main
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
@@ -53,7 +53,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Terragrunt Validate'
-        uses: vbridgecloud/terragrunt-github-actions@master
+        uses: vbridgecloud/terragrunt-github-actions@main
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
@@ -64,7 +64,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: 'Terragrunt Plan'
-        uses: vbridgecloud/terragrunt-github-actions@master
+        uses: vbridgecloud/terragrunt-github-actions@main
         with:
           tf_actions_version: ${{ env.tf_version }}
           tg_actions_version: ${{ env.tg_version }}
